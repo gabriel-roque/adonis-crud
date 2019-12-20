@@ -9,7 +9,11 @@ const Tweet = use('App/Models/Tweet')
 class TweetController {
 
   async index({ response }) {
-    const tweets = await Tweet.all();
+    // Eager loading with Relationships
+    const tweets = await Tweet
+      .query()
+      .with('user')
+      .fetch();
 
     return response.status(200).send(tweets);
   }
