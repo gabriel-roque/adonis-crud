@@ -1,9 +1,9 @@
 'use strict'
 
 class AppController {
-    index() {
-        return { msg: "Route is protect with JWT! HELLO WORLD" }
-    }
+  index() {
+    return { msg: "JWT is valid!" }
+  }
 }
 
 module.exports = AppController
